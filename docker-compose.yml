@@ -5,7 +5,7 @@ services:
     env_file:
       - .env
     ports:
-      - "8001:8000"
+      - "8000:8000"
     volumes:
       - ./:/app
       - my_media:/files/media
@@ -20,7 +20,7 @@ services:
 
 
   db:
-    image: postgres:16.11-alpine3.23
+    image: postgres:16-alpine
     restart: always
     env_file:
       - .env
