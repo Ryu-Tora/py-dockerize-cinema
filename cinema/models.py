@@ -8,14 +8,6 @@ from django.conf import settings
 from django.utils.text import slugify
 
 
-def movie_image_file_path(instance, filename):
-    filename = (
-        f"{slugify(instance.title)}-{uuid.uuid4()}"
-        f"{pathlib.Path(filename).suffix}"
-    )
-    return os.path.join("uploads/movies/") / pathlib.Path(filename)
-
-
 class CinemaHall(models.Model):
     name = models.CharField(max_length=255)
     rows = models.IntegerField()
